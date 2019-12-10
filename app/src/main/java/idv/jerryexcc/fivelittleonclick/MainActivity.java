@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn5.setOnClickListener(myListener);
     }
 
-    public void click() {//XML的Button直接呼叫
+    public void click(View view) {//XML的Button直接呼叫
         Toast.makeText(MainActivity.this, "XML呼叫public Click()方法", Toast.LENGTH_SHORT).show();
     }
 
