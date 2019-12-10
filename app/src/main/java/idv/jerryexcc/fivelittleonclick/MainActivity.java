@@ -8,8 +8,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private MyClickClass myListener = new MyClickClass();
-    private View.OnClickListener listener = new View.OnClickListener() {
+    private MyClickClass myListener = new MyClickClass();//new 出有實作OnClick的物件
+    private View.OnClickListener listener = new View.OnClickListener() {//直接new出監聽器
         @Override
         public void onClick(View view) {
             Toast.makeText(MainActivity.this, "new出一個新的監聽器", Toast.LENGTH_SHORT).show();
@@ -49,8 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toast.makeText(MainActivity.this, "Activity實作OnClickListener", Toast.LENGTH_SHORT).show();
     }
 
-    private class MyClickClass implements View.OnClickListener {
-
+    private class MyClickClass implements View.OnClickListener {//透過其他類別並把該物件new出來
         @Override
         public void onClick(View view) {
             Toast.makeText(MainActivity.this, "內部類別實作OnClickListener", Toast.LENGTH_SHORT).show();
